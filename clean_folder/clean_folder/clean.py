@@ -46,7 +46,10 @@ registered_extensions = {
     "XLSX" : documents,
     "ZIP": archives,
     "MP3": audio,
-    "MP4": video
+    "MP4": video,
+    "AVI": video,
+    "MKV": video,
+    "MOV": video
 }
 
 
@@ -57,7 +60,7 @@ def get_extensions(file_name):
 def scan(folder):
     for item in folder.iterdir():
         if item.is_dir():
-            if item.name not in ("JPEG", "JPG", "PNG", "TXT", "DOCX", "DOC", "PDF", "PPTX", "XLSX" "OTHER", "ZIP", "MP3", "MP4"):
+            if item.name not in ("JPEG", "JPG", "PNG", "TXT", "DOCX", "DOC", "PDF", "PPTX", "XLSX" "OTHER", "ZIP", "MP3", "MP4",,"AVI","MKV","MOV"):
                 folders.append(item)
                 scan(item)
             continue
