@@ -95,7 +95,7 @@ def handle_archive(path: Path, root_folder, dist):
     target_folder = root_folder / dist
     target_folder.mkdir(exist_ok=True)
 
-    new_name = normalize(path.name.replace(".zip", ''))
+    new_name = normalize(path.name.replace(".zip", '').replace('.tar', '').replace('.gz', ''))
 
     archive_folder = target_folder / new_name
     archive_folder.mkdir(exist_ok=True)
