@@ -38,6 +38,7 @@ registered_extensions = {
     "JPEG": images,
     "PNG": images,
     "JPG": images,
+    "SVG": images,
     "DOC": documents,
     "PDF": documents,
     "TXT": documents,
@@ -45,6 +46,11 @@ registered_extensions = {
     "PPTX": documents,
     "XLSX" : documents,
     "ZIP": archives,
+    "GZ": archives,
+    "TAR": archives,
+    "OGG": audio,
+    "WAV": audio,
+    "AMR": audio,
     "MP3": audio,
     "MP4": video,
     "AVI": video,
@@ -60,7 +66,7 @@ def get_extensions(file_name):
 def scan(folder):
     for item in folder.iterdir():
         if item.is_dir():
-            if item.name not in ("JPEG", "JPG", "PNG", "TXT", "DOCX", "DOC", "PDF", "PPTX", "XLSX" "OTHER", "ZIP", "MP3", "MP4",,"AVI","MKV","MOV"):
+            if item.name not in ("JPEG", "JPG", "SVG", "PNG", "TXT", "DOCX", "DOC", "PDF", "PPTX", "XLSX" "OTHER", "ZIP", "TAR", "GZ", "MP3", "AMR", "WAV", "OGG", "MP4","AVI","MKV","MOV"):
                 folders.append(item)
                 scan(item)
             continue
